@@ -6,9 +6,9 @@ function App() {
   return (
       <div className="flex flex-col min-h-screen overflow-hidden bg-gray-200">
         <Header/>
-        <Stats/>
-        <Stats/>
-        <Stats/>
+        <Stats account={"First account"}/>
+        <Stats account={"Second account"}/>
+        <Stats account={"Third account"}/>
     </div>
   );
 }
