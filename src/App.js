@@ -1,14 +1,18 @@
 import './App.css';
+import React, { useState } from 'react';
 import Header from "./partials/header";
 import Stats from "./partials/stats";
 
 function App() {
+
+    const [statsList, setStatsList] = useState([]);
+
   return (
       <div className="flex flex-col min-h-screen overflow-hidden bg-gray-200">
-        <Header/>
-        <Stats account={"First account"}/>
-        <Stats account={"Second account"}/>
-        <Stats account={"Third account"}/>
+        <Header statsList={statsList} setStatsList={setStatsList}/>
+          <div>
+              {statsList}
+          </div>
     </div>
   );
 }
