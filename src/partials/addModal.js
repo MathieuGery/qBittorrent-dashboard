@@ -6,7 +6,7 @@ function AddModal(props) {
         <div className="fixed z-10 inset-0 overflow-y-auto">
             <div className="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
                 <div className="fixed inset-0 transition-opacity" aria-hidden="true">
-                    <div className="absolute inset-0 bg-gray-500 opacity-75"></div>
+                    <div className="absolute inset-0 bg-gray-500 opacity-75"/>
                 </div>
 
                 <span className="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
@@ -27,12 +27,12 @@ function AddModal(props) {
                                        className="h-10 p-2 shadow-sm ring-black focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-blue-600 rounded-md"
                                        placeholder="Host1" aria-describedby="name-description"/>
                             </div>
-                            <p className="mt-2 text-sm text-gray-500" id="name-description">Use friendly name for your host</p>
+                            <p className="mt-2 text-sm text-gray-500 px-4" id="name-description">Use friendly name for your host</p>
                         </div>
                         <div className="mt-10">
-                            <label for="host" class="block text-sm font-medium text-gray-700">Host adress</label>
-                            <div class="mt-1 p-2">
-                                <input type="text" name="host" id="host" class="h-10 p-2 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md" placeholder="https://qbittorrent.yoursite.com or IP"/>
+                            <label className="block text-sm font-medium text-gray-700">Host adress</label>
+                            <div className="mt-1 p-2">
+                                <input type="text" name="host" id="host" className="h-10 p-2 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md" placeholder="https://qbittorrent.yoursite.com or IP"/>
                             </div>
                         </div>
                         <div className="mt-10">
@@ -58,7 +58,7 @@ function AddModal(props) {
                             Add
                         </button>
                         <button type="button"
-                                onClick={(e) => {props.setShowModal(false)}}
+                                onClick={() => {props.setShowModal(false)}}
                                 className="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:col-start-1 sm:text-sm">
                             Cancel
                         </button>
