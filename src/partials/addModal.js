@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import qbConnection from "../api/qbittorrent";
 
 function AddModal(props) {
 
@@ -8,10 +9,12 @@ function AddModal(props) {
     const [hostPassword, setHostPassword] = useState("");
 
     const process = (hostAddress, hostName, hostUser, hostPassword) => {
-        console.log(hostAddress);
-        console.log(hostUser);
-        console.log(hostPassword);
-        console.log(hostName);
+        qbConnection(hostAddress, hostName, hostUser, hostPassword).then((response => {
+            if (response === true)
+                console.log("Ok")
+            else
+                console.log("Nok")
+        }))
     }
 
     return (
@@ -20,7 +23,6 @@ function AddModal(props) {
                 <div className="fixed inset-0 transition-opacity" aria-hidden="true">
                     <div className="absolute inset-0 bg-gray-500 opacity-75"/>
                 </div>
-
                 <span className="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
                 <div
                     className="inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full sm:p-6"
@@ -34,33 +36,33 @@ function AddModal(props) {
                         </div>
                         <div className="mt-10">
                             <label htmlFor="name" className="block text-sm font-medium text-gray-700">Name</label>
-                            <div className="mt-1 p-2 mr-20">
-                                <input type="text" name="name" id="name"
+                            <div className="mt-1 p-2">
+                                <input type="text" name="name" id="name" value={hostName}
                                        onChange={event => setHostName(event.target.value)}
                                        className="h-10 p-2 shadow-sm border-2 border-opacity-100 focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm rounded-md"
-                                       placeholder="Host1" aria-describedby="name-description"/>
+                                       placeholder="Host1" aria-describedby="name-description" required />
                             </div>
                             <p className="mt-2 text-sm text-gray-500 px-4" id="name-description">Use friendly name for your host</p>
                         </div>
                         <div className="mt-10">
                             <label className="block text-sm font-medium text-gray-700">Host address</label>
-                            <div className="mt-1 p-2 mr-20">
-                                <input type="text" name="host" id="host" onChange={event => setHostAddress(event.target.value)}
+                            <div className="mt-1 p-2">
+                                <input required type="text" name="host" id="host" onChange={event => setHostAddress(event.target.value)} value={hostAddress}
                                        className="border-2 border-opacity-100 h-10 p-2 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md" placeholder="https://qbittorrent.yoursite.com or IP"/>
                             </div>
                         </div>
                         <div className="mt-10">
                             <label htmlFor="user" className="block text-sm font-medium text-gray-700">User</label>
-                            <div className="mt-1 p-2 mr-20">
-                                <input type="text" name="user" id="user" onChange={event => setHostUser(event.target.value)}
+                            <div className="mt-1 p-2">
+                                <input required type="text" name="user" id="user" onChange={event => setHostUser(event.target.value)} value={hostUser}
                                        className="border-2 border-opacity-100 h-10 p-2 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
                                        placeholder="admin"/>
                             </div>
                         </div>
                         <div className="mt-10">
                             <label htmlFor="password" className="block text-sm font-medium text-gray-700">Password</label>
-                            <div className="mt-1 p-2 mr-20">
-                                <input type="text" name="password" id="password" onChange={event => setHostPassword(event.target.value)}
+                            <div className="mt-1 p-2">
+                                <input required type="text" name="password" id="password" onChange={event => setHostPassword(event.target.value)} value={hostPassword}
                                        className="border-2 border-opacity-100 h-10 p-2 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
                                        placeholder="password"/>
                             </div>
