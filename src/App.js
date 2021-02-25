@@ -2,6 +2,8 @@ import './App.css';
 import React, { useState } from 'react';
 import Header from "./partials/header";
 import AddModal from "./partials/addModal";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'
 
 function App() {
 
@@ -10,6 +12,7 @@ function App() {
 
   return (
       <div className="flex flex-col min-h-screen overflow-hidden bg-gray-200">
+      <ToastContainer/>
         <Header statsList={statsList} setStatsList={setStatsList} setShowModal={setShowModal}/>
           <div>
               {statsList}
