@@ -40,21 +40,21 @@ function AddModal(props) {
                                 <input type="text" name="name" id="name" value={hostName}
                                        onChange={event => setHostName(event.target.value)}
                                        className="h-10 p-2 shadow-sm border-2 border-opacity-100 focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm rounded-md"
-                                       placeholder="Host1" aria-describedby="name-description" required />
+                                       placeholder="Host1" aria-describedby="name-description"/>
                             </div>
                             <p className="mt-2 text-sm text-gray-500 px-4" id="name-description">Use friendly name for your host</p>
                         </div>
                         <div className="mt-10">
                             <label className="block text-sm font-medium text-gray-700">Host address</label>
                             <div className="mt-1 p-2">
-                                <input required type="text" name="host" id="host" onChange={event => setHostAddress(event.target.value)} value={hostAddress}
+                                <input type="text" name="host" id="host" onChange={event => setHostAddress(event.target.value)} value={hostAddress}
                                        className="border-2 border-opacity-100 h-10 p-2 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md" placeholder="https://qbittorrent.yoursite.com or IP"/>
                             </div>
                         </div>
                         <div className="mt-10">
                             <label htmlFor="user" className="block text-sm font-medium text-gray-700">User</label>
                             <div className="mt-1 p-2">
-                                <input required type="text" name="user" id="user" onChange={event => setHostUser(event.target.value)} value={hostUser}
+                                <input type="text" name="user" id="user" onChange={event => setHostUser(event.target.value)} value={hostUser}
                                        className="border-2 border-opacity-100 h-10 p-2 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
                                        placeholder="admin"/>
                             </div>
@@ -62,7 +62,7 @@ function AddModal(props) {
                         <div className="mt-10">
                             <label htmlFor="password" className="block text-sm font-medium text-gray-700">Password</label>
                             <div className="mt-1 p-2">
-                                <input required type="text" name="password" id="password" onChange={event => setHostPassword(event.target.value)} value={hostPassword}
+                                <input type="text" name="password" id="password" onChange={event => setHostPassword(event.target.value)} value={hostPassword}
                                        className="border-2 border-opacity-100 h-10 p-2 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
                                        placeholder="password"/>
                             </div>
